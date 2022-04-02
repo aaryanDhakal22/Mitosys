@@ -4,10 +4,10 @@ interface Student {
   phone: number;
   id: string;
 }
-const ID = ({ student }: { student: Student }) => {
+const ID = ({ student, profileView }: { student: Student; profileView: any }) => {
   return (
     <div className="col-3">
-      <a href={student.name}>
+      <a onClick={profileView.bind(null, student.id)}>
         <div className="bg-dark text-light">
           {student.name}
           <ul className="list-group list-group-flush">
