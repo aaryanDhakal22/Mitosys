@@ -1,0 +1,70 @@
+Project Name      : Mitosys
+Project Owner     : Anmol Special Education Center
+Project Developer : Aaryan Dhakal
+Project Deadline  : Shrawan 1, 2079
+
+Feature Requests: 
+    Studnet Profile Mangement
+    Student Account Management
+    Credit Records
+    Detailed Debit Records
+    Income Statement Generator
+    Balance Sheet Generator
+    Donation Records
+    Bank Records
+    Bill Management
+    Syncronized Databases
+    Backup Utilities
+
+Feature Description:
+    1. Student Profile Management : Maintain information about the student such as name, age, etc.
+    2. Student Account Management : Keep and maintain records of student payments and keep track of the individual headers
+    3. Credit Records : Maintain several headers and keep records of them monthly of all sources of income
+    4. Detailed Debit Records : Have a detail list of everything that consumed money depending on different headers.
+    5. Income Statement Generator : Use all the stored information to generate and income statement at the end of the month
+    6. Balance Sheet Generator: Use the stored information to generate an overall balance sheet
+    7. Donation Records : Track Donations whenever they are given
+    8. Bank Records : Maintain how much is placed in which bank and the interests and other certain manually inputable details
+    9. Bill Management : Able to create, update, delete, query and distribute student account bills
+    10. Syncronized Databse : Ability to make sure every device is working on the same collection of data
+    11. Backup Utilities : Make it easier to backup data from the database.
+
+Platform : 
+    1. Web
+    2. Mobile
+
+Technologies Used:
+    
+    Front-End: 
+        1. React
+        2. Redux
+        3. Bootstrap
+        4. Webpack
+
+    Back-End:
+        1. Django
+        2. PostgreSQL
+
+    Languages:
+        1. Python
+        2. Typescript
+        3. SQL
+
+    Others:
+        1. Git/ Github
+        2. Notion
+        3. VScode
+        4. Firefox
+
+Hardware Requirements:
+    1. 1 TB SSD X 2
+    2. 2 Computers
+
+Timeline estimates: 
+    1. March 22nd - June 16th : Development Phase
+    2. June 16th  - July 1st  : Setup Phase
+    3. July 2nd   - July 16th : Testing Phase
+    4. July 17th  - onwards   : Application Phase
+
+
+

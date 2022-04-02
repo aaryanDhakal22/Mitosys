@@ -1,0 +1,25 @@
+ How much do you know about software 
+ What is software going to do? 
+ Details on each usage 
+ What other optional features would you like on this software
+ What devices do you want this to be on 
+ How many devices should the software run on 
+ When will you start usnig the software ?
+ 
+Paper / less
+
+Accounting book keepping :  Student Fees Monthly,  (Notification), Paperless 
+Student ledger
+Inventory
+
+1. Student : Name, Age, Sex, Address, Phone Number, Group(abcde), 
+2. Account : Admission Charge, Monthly Fees, Snacks, Transportation(optional), Therapy(Optional), Speech Therapy, (Ancilliary) Fee
+3. Teacher : TBD
+4. Organization: 
+	Income Statement[monthly]: (INCOME : Student Account, Donations[M], Bank Interest[M]), (DEBIT : Teacher salary(M), Rent(M), 		Water supplies electricity, telephone, repairs, fuels, groceries, stationaries, Bank charge, Tea and snacks, Kithcen supplies, 	 Transport,Furniture, Vehicle, Computer system, )
+	Balance Sheet: 
+		
+
+9842032469
+bikashghimire0@gmail.com
+
