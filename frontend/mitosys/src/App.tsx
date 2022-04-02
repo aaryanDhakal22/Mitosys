@@ -1,7 +1,7 @@
 import React from "react";
-
+import StudentCard from "./components/StudentCard";
 function App() {
-  return <div>Hello Warudo</div>;
+  return <StudentCard />;
 }
 
 export default App;

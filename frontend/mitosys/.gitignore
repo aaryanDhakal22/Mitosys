@@ -7,10 +7,10 @@ geckodriver.log
 .vscode
 # testing
 /coverage
-
+ideapad.txt
 # production
 /build
-
+/src/components/jsondata.tsx
 # misc
 .DS_Store
 .env.local
