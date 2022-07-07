@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Mitosys</string>
+    <string name="mitosys">Mitosys</string>
+    <string name="logo">logo</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="status">Status</string>
+    <string name="profilephoto">profilePhoto</string>
+    <string name="sampleName">Name: Sample Name</string>
+    <string name="sampleAge">Age: 69</string>
+    <string name="sampleDOB">DOB: 04/20/2069</string>
+    <string name="sampleStatus">Paid</string>
 </resources>
