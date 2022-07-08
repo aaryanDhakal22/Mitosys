@@ -92,6 +92,7 @@
         app:layout_constraintTop_toBottomOf="@+id/userDetailsCardView" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
@@ -111,8 +112,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sampleStatus"
-                android:textSize="26sp"
                 android:textColor="@color/green"
+                android:textSize="26sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -122,4 +123,105 @@
 
 
     </androidx.cardview.widget.CardView>
+
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/amount_left" />
+
+            <TextView
+                android:id="@+id/amtLeftTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleAmountLeft" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/due_date" />
+
+            <TextView
+                android:id="@+id/dueDateTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleDate" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/days_left" />
+
+            <TextView
+                android:id="@+id/daysLeftTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleDaysLeft" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/due_status" />
+
+            <TextView
+                android:id="@+id/dueStatusTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleDue"
+                android:textColor="@color/green" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/infoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/information"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
