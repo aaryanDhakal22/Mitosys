@@ -20,4 +20,8 @@
     <string name="sampleDaysLeft">69 days</string>
     <string name="due_status">Due Status</string>
     <string name="sampleDue">Due</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="download_pdf">Download PDF</string>
+    <string name="quit">Quit</string>
 </resources>
