@@ -25,8 +25,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkInput() {
-        if(emailET.editText?.text.toString() != "hehe@gmail.com"){
-            emailET.error = "Invalid email"
+        if(unameET.editText?.text.toString() != "hehe@gmail.com"){
+            unameET.error = "Invalid email"
         }else if(passET.editText?.text.toString() != "Nepal123"){
             passET.error = "Invalid Password"
         }else{
