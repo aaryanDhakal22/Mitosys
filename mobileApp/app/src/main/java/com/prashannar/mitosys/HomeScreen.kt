@@ -41,6 +41,7 @@ class HomeScreen : AppCompatActivity() {
 
     }
 
+    //prevents closing of app when slide menu is open
     override fun onBackPressed() {
         if(drawerLayout.isDrawerOpen(Gravity.LEFT)){
             drawerLayout.closeDrawer(Gravity.LEFT)
@@ -58,13 +59,6 @@ class HomeScreen : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
-
-    override fun onResume() {
-        super.onResume()
-    }
 
 
 }
