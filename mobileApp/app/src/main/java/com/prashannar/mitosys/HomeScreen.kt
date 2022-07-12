@@ -3,6 +3,7 @@ package com.prashannar.mitosys
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -10,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_home_screen.*
 
 class HomeScreen : AppCompatActivity() {
 
-    lateinit var toggle: ActionBarDrawerToggle
+    private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +38,17 @@ class HomeScreen : AppCompatActivity() {
             true
         }
 
+
+    }
+
+    override fun onBackPressed() {
+        if(drawerLayout.isDrawerOpen(Gravity.LEFT)){
+            drawerLayout.closeDrawer(Gravity.LEFT)
+        }else{
+            super.onBackPressed()
+        }
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -45,4 +57,14 @@ class HomeScreen : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onResume() {
+        super.onResume()
+    }
+
+
 }
