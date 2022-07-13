@@ -3,6 +3,8 @@ package com.prashannar.mitosys
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
@@ -34,6 +36,22 @@ class HomeScreen : AppCompatActivity() {
                 R.id.item1 -> Toast.makeText(this, "Download PDF", Toast.LENGTH_SHORT).show()
 
                 R.id.item2 -> {
+//                    if(drawerLayout.isDrawerOpen(Gravity.LEFT)){
+//                        drawerLayout.closeDrawer(Gravity.LEFT)
+//                    }
+//                    progressBar.isVisible = true
+//                    val intent = Intent(this, MainActivity::class.java)
+//                    startActivity(intent)
+//                    finish()
+
+                    if(drawerLayout.isDrawerOpen(Gravity.LEFT)){
+                        drawerLayout.closeDrawer(Gravity.LEFT)
+                    }
+                    Handler(Looper.myLooper()!!).postDelayed({
+                        Log.d("this","closing")
+                    }, 500)
+
+                    progressBar.isVisible = true
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
                     finish()
