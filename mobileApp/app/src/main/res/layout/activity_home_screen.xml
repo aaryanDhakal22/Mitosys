@@ -127,7 +127,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/sampleStatus"
-                    android:textColor="@color/green"
+                    android:textColor="@color/red"
                     android:textSize="26sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -220,7 +220,7 @@
                     android:layout_gravity="right"
                     android:padding="3dp"
                     android:text="@string/sampleStatus"
-                    android:textColor="@color/green" />
+                    android:textColor="@color/red" />
             </TableRow>
 
             <View
