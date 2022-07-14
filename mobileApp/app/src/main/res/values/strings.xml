@@ -27,4 +27,11 @@
     <string name="username">Username</string>
     <string name="payment_details">Payment Details</string>
     <string name="save_details">Save Details</string>
+    <string name="speech_therapy">Speech Therapy</string>
+    <string name="therapy">Therapy</string>
+    <string name="transportation">Transportation</string>
+    <string name="admission_charge">Admission Charge</string>
+    <string name="sampleAmt">Rs. 0</string>
+    <string name="monthly_charge">Monthly Charge</string>
+    <string name="snacks">Snacks</string>
 </resources>

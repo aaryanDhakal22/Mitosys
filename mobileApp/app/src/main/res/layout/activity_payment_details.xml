@@ -26,13 +26,106 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
-                android:text="@string/amount_left" />
+                android:text="@string/speech_therapy"/>
 
             <TextView
-                android:id="@+id/amtLeftTV"
+                android:id="@+id/speechTherapyTV"
                 android:layout_gravity="right"
                 android:padding="3dp"
-                android:text="@string/sampleAmountLeft" />
+                android:text="@string/sampleAmt" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/therapy"/>
+
+            <TextView
+                android:id="@+id/TherapyTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleAmt" />
+        </TableRow>
+
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/transportation"/>
+
+            <TextView
+                android:id="@+id/transportationTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleAmt" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/admission_charge"/>
+
+            <TextView
+                android:id="@+id/admissionChargeTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleAmt" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/monthly_charge"/>
+
+            <TextView
+                android:id="@+id/monthlyChargeTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleAmt" />
+        </TableRow>
+
+        <View
+            android:layout_height="2dip"
+            android:background="#FF909090" />
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="3dp"
+                android:text="@string/snacks"/>
+
+            <TextView
+                android:id="@+id/snacksTV"
+                android:layout_gravity="right"
+                android:padding="3dp"
+                android:text="@string/sampleAmt" />
         </TableRow>
 
         <View
@@ -134,5 +227,16 @@
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/infoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/information"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
