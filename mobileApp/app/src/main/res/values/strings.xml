@@ -25,4 +25,6 @@
     <string name="download_pdf">Download PDF</string>
     <string name="quit">Quit</string>
     <string name="username">Username</string>
+    <string name="payment_details">Payment Details</string>
+    <string name="save_details">Save Details</string>
 </resources>

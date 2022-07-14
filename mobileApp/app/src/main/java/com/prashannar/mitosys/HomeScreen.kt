@@ -33,7 +33,10 @@ class HomeScreen : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.item1 -> Toast.makeText(this, "Download PDF", Toast.LENGTH_SHORT).show()
+                R.id.item1 -> {
+                    val intent = Intent(this, PaymentDetails::class.java)
+                    startActivity(intent)
+                }
 
                 R.id.item2 -> {
 
@@ -50,8 +53,13 @@ class HomeScreen : AppCompatActivity() {
         }
 
 
+        getUserData()
 
 
+
+    }
+
+    private fun getUserData() {
         lifecycleScope.launchWhenCreated {
             progressBar.isVisible = true
 
@@ -83,7 +91,6 @@ class HomeScreen : AppCompatActivity() {
             progressBar.isVisible = false
 
         }
-
     }
 
     //prevents closing of app when slide menu is open
@@ -103,6 +110,13 @@ class HomeScreen : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onResume() {
+        getUserData()
+        super.onResume()
+    }
 
-
+    override fun onStart() {
+        getUserData()
+        super.onStart()
+    }
 }
