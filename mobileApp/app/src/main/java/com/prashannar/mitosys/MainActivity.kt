@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkInput() {
-        if(unameET.editText?.text.toString() != "userOne"){
+        if(unameET.editText?.text?.trim().toString() != "userOne"){
             unameET.error = "Invalid Username"
-        }else if(passET.editText?.text.toString() != "Nepal123"){
+        }else if(passET.editText?.text?.trim().toString() != "Nepal123"){
             passET.error = "Invalid Password"
         }else{
             val intent = Intent(this, HomeScreen::class.java)
