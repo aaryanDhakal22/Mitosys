@@ -36,6 +36,7 @@ class HomeScreen : AppCompatActivity() {
                 R.id.item1 -> {
                     val intent = Intent(this, PaymentDetails::class.java)
                     startActivity(intent)
+                    drawerLayout.closeDrawer(Gravity.LEFT)
                 }
 
                 R.id.item2 -> {

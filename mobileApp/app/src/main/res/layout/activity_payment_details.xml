@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".PaymentDetails">
 
+    <ProgressBar
+        android:id="@+id/progressBarDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -26,7 +37,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
-                android:text="@string/speech_therapy"/>
+                android:text="@string/speech_therapy" />
 
             <TextView
                 android:id="@+id/speechTherapyTV"
@@ -40,13 +51,12 @@
             android:background="#FF909090" />
 
 
-
         <TableRow>
 
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
-                android:text="@string/therapy"/>
+                android:text="@string/therapy" />
 
             <TextView
                 android:id="@+id/TherapyTV"
@@ -65,7 +75,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
-                android:text="@string/transportation"/>
+                android:text="@string/transportation" />
 
             <TextView
                 android:id="@+id/transportationTV"
@@ -83,7 +93,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
-                android:text="@string/admission_charge"/>
+                android:text="@string/admission_charge" />
 
             <TextView
                 android:id="@+id/admissionChargeTV"
@@ -101,7 +111,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
-                android:text="@string/monthly_charge"/>
+                android:text="@string/monthly_charge" />
 
             <TextView
                 android:id="@+id/monthlyChargeTV"
@@ -119,7 +129,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
-                android:text="@string/snacks"/>
+                android:text="@string/snacks" />
 
             <TextView
                 android:id="@+id/snacksTV"
@@ -192,25 +202,27 @@
         android:id="@+id/saveBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="188dp"
+        android:layout_marginBottom="192dp"
+        android:backgroundTint="@color/blue"
         android:text="@string/save_details"
         android:textAllCaps="false"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
+        app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="200dp"
-        android:layout_height="130dp"
+        android:layout_width="171dp"
+        android:layout_height="111dp"
         android:layout_marginTop="36dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon"
-        android:contentDescription="@string/logo" />
+        app:srcCompat="@drawable/icon" />
 
     <TextView
         android:id="@+id/textView2"
@@ -218,8 +230,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:text="@string/mitosys"
-        android:textSize="26sp"
         android:textColor="@color/blue"
+        android:textSize="26sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -238,5 +250,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3"
         app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/backIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
