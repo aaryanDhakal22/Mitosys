@@ -1,15 +1,22 @@
 package com.prashannar.mitosys
 
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.util.Log
+import android.view.View
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.activity_payment_details.*
 import retrofit2.HttpException
+import java.io.File
+import java.io.FileOutputStream
 import java.io.IOException
+import java.lang.Exception
 
 class PaymentDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,6 +33,47 @@ class PaymentDetails : AppCompatActivity() {
         }
 
         getUserData()
+
+        saveBtn.setOnClickListener {
+            val bitmap: Bitmap = Screenshot.takeScreenShotOfRoot(ssIV)
+            saveImage(bitmap)
+            ssIV.setImageBitmap(bitmap)
+            Log.d("saved", bitmap.toString())
+            Toast.makeText(this, "Captured", Toast.LENGTH_SHORT).show()
+
+        }
+    }
+
+    companion object Screenshot{
+           private fun takeScreenShot(view: View): Bitmap{
+            view.isDrawingCacheEnabled = true
+            view.buildDrawingCache(true)
+            val bitmap = Bitmap.createBitmap(view.drawingCache)
+            view.isDrawingCacheEnabled = false
+            return bitmap
+        }
+        fun takeScreenShotOfRoot(v: View): Bitmap{
+            return takeScreenShot(v.rootView)
+        }
+    }
+
+    private fun saveImage(bit: Bitmap){
+        val root = Environment.getExternalStorageDirectory().absolutePath
+        val myDir: File = File(root + "/saved_images")
+        myDir.mkdirs()
+
+        val fName = "Image-"+ 0 +".jpg"
+        val file: File = File(myDir, fName)
+        if(file.exists()) file.delete()
+
+        try {
+            val out : FileOutputStream =  FileOutputStream(file)
+            bit.compress(Bitmap.CompressFormat.JPEG, 90, out)
+            out.flush()
+            out.close()
+        }catch (e: Exception){
+            e.printStackTrace()
+        }
     }
 
     private fun getUserData() {
