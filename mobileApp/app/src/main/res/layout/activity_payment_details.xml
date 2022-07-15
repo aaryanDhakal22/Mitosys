@@ -41,7 +41,7 @@
 
             <TextView
                 android:id="@+id/speechTherapyTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
@@ -60,7 +60,7 @@
 
             <TextView
                 android:id="@+id/TherapyTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
@@ -79,7 +79,7 @@
 
             <TextView
                 android:id="@+id/transportationTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
@@ -97,7 +97,7 @@
 
             <TextView
                 android:id="@+id/admissionChargeTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
@@ -115,7 +115,7 @@
 
             <TextView
                 android:id="@+id/monthlyChargeTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
@@ -133,7 +133,7 @@
 
             <TextView
                 android:id="@+id/snacksTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
@@ -151,7 +151,7 @@
 
             <TextView
                 android:id="@+id/dueDateTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleDate" />
         </TableRow>
@@ -169,7 +169,7 @@
 
             <TextView
                 android:id="@+id/daysLeftTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleDaysLeft" />
         </TableRow>
@@ -187,7 +187,7 @@
 
             <TextView
                 android:id="@+id/dueStatusTV"
-                android:layout_gravity="right"
+                android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleStatus"
                 android:textColor="@color/red" />
@@ -216,10 +216,10 @@
         android:id="@+id/imageView3"
         android:layout_width="171dp"
         android:layout_height="111dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="40dp"
         android:contentDescription="@string/logo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon" />
@@ -262,6 +262,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.071"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        android:contentDescription="@string/back_icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
