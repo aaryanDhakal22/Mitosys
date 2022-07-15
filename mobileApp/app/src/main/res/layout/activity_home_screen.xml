@@ -180,7 +180,7 @@
 
                 <TextView
                     android:id="@+id/amtLeftTV"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:padding="3dp"
                     android:text="@string/sampleAmountLeft" />
             </TableRow>
@@ -198,7 +198,7 @@
 
                 <TextView
                     android:id="@+id/dueDateTV"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:padding="3dp"
                     android:text="@string/sampleDate" />
             </TableRow>
@@ -216,7 +216,7 @@
 
                 <TextView
                     android:id="@+id/daysLeftTV"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:padding="3dp"
                     android:text="@string/sampleDaysLeft" />
             </TableRow>
@@ -234,7 +234,7 @@
 
                 <TextView
                     android:id="@+id/dueStatusTV"
-                    android:layout_gravity="right"
+                    android:layout_gravity="end"
                     android:padding="3dp"
                     android:text="@string/sampleStatus"
                     android:textColor="@color/red" />
