@@ -1,10 +1,14 @@
 package com.prashannar.mitosys
 
+import android.content.ContentValues
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -16,6 +20,7 @@ import retrofit2.HttpException
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
+import java.io.OutputStream
 import java.lang.Exception
 
 class PaymentDetails : AppCompatActivity() {
@@ -36,11 +41,37 @@ class PaymentDetails : AppCompatActivity() {
 
         saveBtn.setOnClickListener {
             val bitmap: Bitmap = Screenshot.takeScreenShotOfRoot(ssIV)
-            saveImage(bitmap)
             ssIV.setImageBitmap(bitmap)
-            Log.d("saved", bitmap.toString())
-            Toast.makeText(this, "Captured", Toast.LENGTH_SHORT).show()
+            saveToGallery(this, bitmap, "Mitosys")
+        }
+    }
 
+    fun saveToGallery(context: Context, bitmap: Bitmap, albumName: String){
+        val filename = "${System.currentTimeMillis()}.png"
+        val write: (OutputStream) -> Boolean = {
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
+        }
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+            val contentValues = ContentValues().apply {
+                put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
+                put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
+                put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_DCIM}/$albumName")
+
+            }
+            context.contentResolver.let {
+                it.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)?.let { uri ->
+                    it.openOutputStream(uri)?.let(write)
+                }
+            }
+        }else{
+            val imagesDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + File.separator + albumName
+            val file = File(imagesDir)
+            if(!file.exists()){
+                file.mkdir()
+            }
+            val image = File(imagesDir, filename)
+            write(FileOutputStream(image))
         }
     }
 
@@ -57,24 +88,24 @@ class PaymentDetails : AppCompatActivity() {
         }
     }
 
-    private fun saveImage(bit: Bitmap){
-        val root = Environment.getExternalStorageDirectory().absolutePath
-        val myDir: File = File(root + "/saved_images")
-        myDir.mkdirs()
-
-        val fName = "Image-"+ 0 +".jpg"
-        val file: File = File(myDir, fName)
-        if(file.exists()) file.delete()
-
-        try {
-            val out : FileOutputStream =  FileOutputStream(file)
-            bit.compress(Bitmap.CompressFormat.JPEG, 90, out)
-            out.flush()
-            out.close()
-        }catch (e: Exception){
-            e.printStackTrace()
-        }
-    }
+//    private fun saveImage(bit: Bitmap){
+//        val root = Environment.getExternalStorageDirectory().absolutePath
+//        val myDir: File = File(root + "/saved_images")
+//        myDir.mkdirs()
+//
+//        val fName = "Image-"+ 0 +".jpg"
+//        val file: File = File(myDir, fName)
+//        if(file.exists()) file.delete()
+//
+//        try {
+//            val out : FileOutputStream =  FileOutputStream(file)
+//            bit.compress(Bitmap.CompressFormat.JPEG, 90, out)
+//            out.flush()
+//            out.close()
+//        }catch (e: Exception){
+//            e.printStackTrace()
+//        }
+//    }
 
     private fun getUserData() {
         lifecycleScope.launchWhenCreated {
