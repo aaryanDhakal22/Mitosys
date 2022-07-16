@@ -87,25 +87,7 @@ class PaymentDetails : AppCompatActivity() {
             return takeScreenShot(v.rootView)
         }
     }
-
-//    private fun saveImage(bit: Bitmap){
-//        val root = Environment.getExternalStorageDirectory().absolutePath
-//        val myDir: File = File(root + "/saved_images")
-//        myDir.mkdirs()
-//
-//        val fName = "Image-"+ 0 +".jpg"
-//        val file: File = File(myDir, fName)
-//        if(file.exists()) file.delete()
-//
-//        try {
-//            val out : FileOutputStream =  FileOutputStream(file)
-//            bit.compress(Bitmap.CompressFormat.JPEG, 90, out)
-//            out.flush()
-//            out.close()
-//        }catch (e: Exception){
-//            e.printStackTrace()
-//        }
-//    }
+    
 
     private fun getUserData() {
         lifecycleScope.launchWhenCreated {
