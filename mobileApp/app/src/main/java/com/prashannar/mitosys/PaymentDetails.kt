@@ -4,10 +4,8 @@ import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
-import android.os.Build
+import android.os.*
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
@@ -42,6 +40,9 @@ class PaymentDetails : AppCompatActivity() {
         saveBtn.setOnClickListener {
             val bitmap: Bitmap = Screenshot.takeScreenShotOfRoot(ssIV)
             ssIV.setImageBitmap(bitmap)
+            val imageHandler = Handler(Looper.getMainLooper()).postDelayed({
+                ssIV.isVisible = false
+            }, 5000)
             saveToGallery(this, bitmap, "Mitosys")
         }
     }
@@ -87,7 +88,7 @@ class PaymentDetails : AppCompatActivity() {
             return takeScreenShot(v.rootView)
         }
     }
-    
+
 
     private fun getUserData() {
         lifecycleScope.launchWhenCreated {
