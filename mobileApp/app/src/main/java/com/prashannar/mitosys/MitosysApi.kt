@@ -10,7 +10,7 @@ interface MitosysApi {
     //TODO: change the request, add query and modify userDetails according to the data sent
 
 
-    @GET("details/{unID}")
+    @GET("student/details/{unID}")
     suspend fun getUser(
         @Path("unID") unID : String
     ) : Response<UserDetails>

@@ -65,7 +65,7 @@ class HomeScreen : AppCompatActivity() {
             progressBar.isVisible = true
 
             val response = try {
-                Instance.api.getUser("62cd0014bd7449355b9e5ace")
+                Instance.api.getUser("2d68c1ed7caa45")
 
             } catch (e: IOException) {
                 Log.e("Retrofit", "No Internet Connection")

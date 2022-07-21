@@ -9,7 +9,7 @@ object Instance {
 
     val api: MitosysApi by lazy {
         Retrofit.Builder()
-            .baseUrl("https://djangostudenttestapi.herokuapp.com/student/")
+            .baseUrl("https://anmolsec.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MitosysApi::class.java)

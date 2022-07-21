@@ -95,7 +95,7 @@ class PaymentDetails : AppCompatActivity() {
             progressBarDetails.isVisible = true
 
             val response = try {
-                Instance.api.getUser("62cd0014bd7449355b9e5ace")
+                Instance.api.getUser("2d68c1ed7caa45")
 
             } catch (e: IOException) {
                 Log.e("Retrofit", "No Internet Connection")
@@ -115,8 +115,8 @@ class PaymentDetails : AppCompatActivity() {
                 speechTherapyTV.text = "Rs. ${details?.speechTherapy}"
                 TherapyTV.text = "Rs. ${details?.therapy}"
                 transportationTV.text = "Rs. ${details?.transportation}"
-                admissionChargeTV.text = "Rs. ${details?.admissionCharge}"
-                monthlyChargeTV.text = "Rs. ${details?.monthlyCharge}"
+//                admissionChargeTV.text = "Rs. ${details?.admissionCharge}"
+//                monthlyChargeTV.text = "Rs. ${details?.monthlyCharge}"
                 snacksTV.text = "Rs. ${details?.snacks}"
 
 
