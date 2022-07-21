@@ -114,30 +114,10 @@
                 android:layout_column="1"
                 android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
-                android:text="@string/admission_charge" />
+                android:text="@string/tuition" />
 
             <TextView
-                android:id="@+id/admissionChargeTV"
-                android:layout_gravity="end"
-                android:padding="3dp"
-                android:fontFamily="@font/roboto_condensed"
-                android:text="@string/sampleAmt" />
-        </TableRow>
-
-        <View
-            android:layout_height="2dip"
-            android:background="#FF909090" />
-
-        <TableRow>
-
-            <TextView
-                android:layout_column="1"
-                android:padding="3dp"
-                android:fontFamily="@font/roboto_condensed"
-                android:text="@string/monthly_charge" />
-
-            <TextView
-                android:id="@+id/monthlyChargeTV"
+                android:id="@+id/tuitionTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"

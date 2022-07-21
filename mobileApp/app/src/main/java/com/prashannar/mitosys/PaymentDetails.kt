@@ -115,8 +115,7 @@ class PaymentDetails : AppCompatActivity() {
                 speechTherapyTV.text = "Rs. ${details?.speechTherapy}"
                 TherapyTV.text = "Rs. ${details?.therapy}"
                 transportationTV.text = "Rs. ${details?.transportation}"
-//                admissionChargeTV.text = "Rs. ${details?.admissionCharge}"
-//                monthlyChargeTV.text = "Rs. ${details?.monthlyCharge}"
+                tuitionTV.text = "Rs. ${details?.tuition}"
                 snacksTV.text = "Rs. ${details?.snacks}"
 
 
