@@ -12,4 +12,6 @@
     <color name="grey">#E8E8E8</color>
     <color name="green">#0D922A</color>
     <color name="red">#ED4337</color>
+    <color name="nordone">#2E3440</color>
+    <color name="nordtwo">#88C0D0</color>
 </resources>
