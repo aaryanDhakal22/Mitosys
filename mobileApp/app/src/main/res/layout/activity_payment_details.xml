@@ -51,12 +51,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/speech_therapy" />
 
             <TextView
                 android:id="@+id/speechTherapyTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -70,12 +72,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/therapy" />
 
             <TextView
                 android:id="@+id/TherapyTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -89,12 +93,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/transportation" />
 
             <TextView
                 android:id="@+id/transportationTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -107,12 +113,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/admission_charge" />
 
             <TextView
                 android:id="@+id/admissionChargeTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -125,12 +133,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/monthly_charge" />
 
             <TextView
                 android:id="@+id/monthlyChargeTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -143,12 +153,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/snacks" />
 
             <TextView
                 android:id="@+id/snacksTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -161,12 +173,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/due_date" />
 
             <TextView
                 android:id="@+id/dueDateTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleDate" />
         </TableRow>
 
@@ -179,12 +193,14 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/days_left" />
 
             <TextView
                 android:id="@+id/daysLeftTV"
                 android:layout_gravity="end"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/sampleDaysLeft" />
         </TableRow>
 
@@ -197,6 +213,7 @@
             <TextView
                 android:layout_column="1"
                 android:padding="3dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/due_status" />
 
             <TextView
@@ -204,6 +221,7 @@
                 android:layout_gravity="end"
                 android:padding="3dp"
                 android:text="@string/sampleStatus"
+                android:fontFamily="@font/roboto_condensed"
                 android:textColor="@color/red" />
         </TableRow>
 
@@ -221,6 +239,7 @@
         android:text="@string/save_details"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:fontFamily="@font/roboto_condensed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.874"
@@ -244,6 +263,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
         android:text="@string/mitosys"
+        android:fontFamily="@font/roboto_condensed"
         android:textColor="@color/blue"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -259,6 +279,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/information"
+        android:fontFamily="@font/roboto_condensed"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
