@@ -1,6 +1,7 @@
 package com.prashannar.mitosys
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -17,6 +18,10 @@ import retrofit2.HttpException
 import java.io.IOException
 
 class HomeScreen : AppCompatActivity() {
+
+    companion object{
+        const val github = "https://github.com/PrashannaR"
+    }
 
     private lateinit var toggle: ActionBarDrawerToggle
 
@@ -51,9 +56,14 @@ class HomeScreen : AppCompatActivity() {
 
             }
             true
+
         }
 
-
+        prashannar.setOnClickListener {
+           val queryUrl : Uri = Uri.parse(github)
+            val intent = Intent(Intent.ACTION_VIEW, queryUrl)
+            startActivity(intent)
+        }
         getUserData()
 
 
