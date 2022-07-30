@@ -5,21 +5,18 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.*
-import androidx.appcompat.app.AppCompatActivity
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import kotlinx.android.synthetic.main.activity_home_screen.*
 import kotlinx.android.synthetic.main.activity_payment_details.*
 import retrofit2.HttpException
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.OutputStream
-import java.lang.Exception
 
 class PaymentDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,17 +44,20 @@ class PaymentDetails : AppCompatActivity() {
         }
     }
 
-    fun saveToGallery(context: Context, bitmap: Bitmap, albumName: String){
+    fun saveToGallery(context: Context, bitmap: Bitmap, albumName: String) {
         val filename = "${System.currentTimeMillis()}.png"
         val write: (OutputStream) -> Boolean = {
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)
         }
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
             val contentValues = ContentValues().apply {
                 put(MediaStore.MediaColumns.DISPLAY_NAME, filename)
                 put(MediaStore.MediaColumns.MIME_TYPE, "image/png")
-                put(MediaStore.MediaColumns.RELATIVE_PATH, "${Environment.DIRECTORY_DCIM}/$albumName")
+                put(
+                    MediaStore.MediaColumns.RELATIVE_PATH,
+                    "${Environment.DIRECTORY_DCIM}/$albumName"
+                )
 
             }
             context.contentResolver.let {
@@ -65,10 +65,12 @@ class PaymentDetails : AppCompatActivity() {
                     it.openOutputStream(uri)?.let(write)
                 }
             }
-        }else{
-            val imagesDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM).toString() + File.separator + albumName
+        } else {
+            val imagesDir =
+                Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
+                    .toString() + File.separator + albumName
             val file = File(imagesDir)
-            if(!file.exists()){
+            if (!file.exists()) {
                 file.mkdir()
             }
             val image = File(imagesDir, filename)
@@ -76,15 +78,16 @@ class PaymentDetails : AppCompatActivity() {
         }
     }
 
-    companion object Screenshot{
-           private fun takeScreenShot(view: View): Bitmap{
+    companion object Screenshot {
+        private fun takeScreenShot(view: View): Bitmap {
             view.isDrawingCacheEnabled = true
             view.buildDrawingCache(true)
             val bitmap = Bitmap.createBitmap(view.drawingCache)
             view.isDrawingCacheEnabled = false
             return bitmap
         }
-        fun takeScreenShotOfRoot(v: View): Bitmap{
+
+        fun takeScreenShotOfRoot(v: View): Bitmap {
             return takeScreenShot(v.rootView)
         }
     }

@@ -1,9 +1,8 @@
 package com.prashannar.mitosys
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -25,11 +24,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkInput() {
-        if(unameET.editText?.text?.trim().toString() != "userOne"){
+        if (unameET.editText?.text?.trim().toString() != "userOne") {
             unameET.error = "Invalid Username"
-        }else if(passET.editText?.text?.trim().toString() != "Nepal123"){
+        } else if (passET.editText?.text?.trim().toString() != "Nepal123") {
             passET.error = "Invalid Password"
-        }else{
+        } else {
             val intent = Intent(this, HomeScreen::class.java)
             startActivity(intent)
             finish()

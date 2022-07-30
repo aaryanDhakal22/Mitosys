@@ -2,15 +2,13 @@ package com.prashannar.mitosys
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_home_screen.*
@@ -19,7 +17,7 @@ import java.io.IOException
 
 class HomeScreen : AppCompatActivity() {
 
-    companion object{
+    companion object {
         const val github = "https://github.com/PrashannaR"
     }
 
@@ -37,7 +35,7 @@ class HomeScreen : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         navView.setNavigationItemSelectedListener {
-            when(it.itemId){
+            when (it.itemId) {
                 R.id.item1 -> {
                     val intent = Intent(this, PaymentDetails::class.java)
                     startActivity(intent)
@@ -51,7 +49,7 @@ class HomeScreen : AppCompatActivity() {
                     startActivity(intent)
                     finish()
 
-                    Toast.makeText(this,"Logging Out", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Logging Out", Toast.LENGTH_SHORT).show()
                 }
 
             }
@@ -60,12 +58,11 @@ class HomeScreen : AppCompatActivity() {
         }
 
         prashannar.setOnClickListener {
-           val queryUrl : Uri = Uri.parse(github)
+            val queryUrl: Uri = Uri.parse(github)
             val intent = Intent(Intent.ACTION_VIEW, queryUrl)
             startActivity(intent)
         }
         getUserData()
-
 
 
     }
@@ -106,16 +103,16 @@ class HomeScreen : AppCompatActivity() {
 
     //prevents closing of app when slide menu is open
     override fun onBackPressed() {
-        if(drawerLayout.isDrawerOpen(Gravity.LEFT)){
+        if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
             drawerLayout.closeDrawer(Gravity.LEFT)
-        }else{
+        } else {
             super.onBackPressed()
         }
 
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(toggle.onOptionsItemSelected(item)){
+        if (toggle.onOptionsItemSelected(item)) {
             return true
         }
         return super.onOptionsItemSelected(item)

@@ -12,24 +12,24 @@
         android:layout_width="70dp"
         android:layout_height="130dp"
         android:layout_marginTop="32dp"
+        android:contentDescription="@string/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/saveBtn"
         app:layout_constraintHorizontal_bias="0.212"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="0.105"
-        android:contentDescription="@string/logo" />
+        app:layout_constraintVertical_bias="0.105" />
 
     <ProgressBar
         android:id="@+id/progressBarDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <TableLayout
@@ -50,15 +50,15 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/speech_therapy" />
 
             <TextView
                 android:id="@+id/speechTherapyTV"
                 android:layout_gravity="end"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -71,15 +71,15 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/therapy" />
 
             <TextView
                 android:id="@+id/TherapyTV"
                 android:layout_gravity="end"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -92,15 +92,15 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/transportation" />
 
             <TextView
                 android:id="@+id/transportationTV"
                 android:layout_gravity="end"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -112,15 +112,15 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/tuition" />
 
             <TextView
                 android:id="@+id/tuitionTV"
                 android:layout_gravity="end"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -132,15 +132,15 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/snacks" />
 
             <TextView
                 android:id="@+id/snacksTV"
                 android:layout_gravity="end"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/sampleAmt" />
         </TableRow>
 
@@ -152,15 +152,15 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/due_date" />
 
             <TextView
                 android:id="@+id/dueDateTV"
                 android:layout_gravity="end"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/sampleDate" />
         </TableRow>
 
@@ -172,15 +172,15 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/days_left" />
 
             <TextView
                 android:id="@+id/daysLeftTV"
                 android:layout_gravity="end"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/sampleDaysLeft" />
         </TableRow>
 
@@ -192,16 +192,16 @@
 
             <TextView
                 android:layout_column="1"
-                android:padding="3dp"
                 android:fontFamily="@font/roboto_condensed"
+                android:padding="3dp"
                 android:text="@string/due_status" />
 
             <TextView
                 android:id="@+id/dueStatusTV"
                 android:layout_gravity="end"
+                android:fontFamily="@font/roboto_condensed"
                 android:padding="3dp"
                 android:text="@string/sampleStatus"
-                android:fontFamily="@font/roboto_condensed"
                 android:textColor="@color/red" />
         </TableRow>
 
@@ -216,10 +216,10 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="192dp"
         android:backgroundTint="@color/nordtwo"
+        android:fontFamily="@font/roboto_condensed"
         android:text="@string/save_details"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:fontFamily="@font/roboto_condensed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.874"
@@ -240,8 +240,8 @@
         android:id="@+id/infoTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/information"
         android:fontFamily="@font/roboto_condensed"
+        android:text="@string/information"
         app:layout_constraintBottom_toTopOf="@+id/tableLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -259,7 +259,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

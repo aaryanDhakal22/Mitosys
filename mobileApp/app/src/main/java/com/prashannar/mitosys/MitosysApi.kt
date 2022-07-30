@@ -3,7 +3,6 @@ package com.prashannar.mitosys
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
-import retrofit2.http.Query
 
 interface MitosysApi {
     //unid 62cd0014bd7449355b9e5ace
@@ -12,8 +11,8 @@ interface MitosysApi {
 
     @GET("student/details/{unID}")
     suspend fun getUser(
-        @Path("unID") unID : String
-    ) : Response<UserDetails>
+        @Path("unID") unID: String
+    ): Response<UserDetails>
 
 
 }

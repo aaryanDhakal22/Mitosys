@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
-    android:id="@+id/drawerLayout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeScreen">
@@ -12,7 +11,7 @@
         android:id="@+id/pb2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,9 +69,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="44dp"
+                    android:fontFamily="@font/roboto_condensed"
                     android:text="@string/sampleName"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/roboto_condensed"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/profileIV"
@@ -98,9 +97,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/roboto_condensed"
                     android:text="@string/sampleDOB"
                     android:textColor="@color/white"
-                    android:fontFamily="@font/roboto_condensed"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -117,10 +116,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="44dp"
+            android:fontFamily="@font/roboto_condensed"
             android:text="@string/status"
             android:textColor="@color/white"
             android:textSize="35sp"
-            android:fontFamily="@font/roboto_condensed"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -147,10 +146,10 @@
                     android:id="@+id/statusTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_condensed"
                     android:text="@string/sampleStatus"
                     android:textColor="@color/white"
                     android:textSize="26sp"
-                    android:fontFamily="@font/roboto_condensed"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -180,15 +179,15 @@
 
                 <TextView
                     android:layout_column="1"
-                    android:padding="3dp"
                     android:fontFamily="@font/roboto_condensed"
+                    android:padding="3dp"
                     android:text="@string/amount_left" />
 
                 <TextView
                     android:id="@+id/amtLeftTV"
                     android:layout_gravity="end"
-                    android:padding="3dp"
                     android:fontFamily="@font/roboto_condensed"
+                    android:padding="3dp"
                     android:text="@string/sampleAmountLeft" />
             </TableRow>
 
@@ -200,15 +199,15 @@
 
                 <TextView
                     android:layout_column="1"
-                    android:padding="3dp"
                     android:fontFamily="@font/roboto_condensed"
+                    android:padding="3dp"
                     android:text="@string/due_date" />
 
                 <TextView
                     android:id="@+id/dueDateTV"
                     android:layout_gravity="end"
-                    android:padding="3dp"
                     android:fontFamily="@font/roboto_condensed"
+                    android:padding="3dp"
                     android:text="@string/sampleDate" />
             </TableRow>
 
@@ -220,15 +219,15 @@
 
                 <TextView
                     android:layout_column="1"
-                    android:padding="3dp"
                     android:fontFamily="@font/roboto_condensed"
+                    android:padding="3dp"
                     android:text="@string/days_left" />
 
                 <TextView
                     android:id="@+id/daysLeftTV"
                     android:layout_gravity="end"
-                    android:padding="3dp"
                     android:fontFamily="@font/roboto_condensed"
+                    android:padding="3dp"
                     android:text="@string/sampleDaysLeft" />
             </TableRow>
 
@@ -240,16 +239,16 @@
 
                 <TextView
                     android:layout_column="1"
-                    android:padding="3dp"
                     android:fontFamily="@font/roboto_condensed"
+                    android:padding="3dp"
                     android:text="@string/due_status" />
 
                 <TextView
                     android:id="@+id/dueStatusTV"
                     android:layout_gravity="end"
+                    android:fontFamily="@font/roboto_condensed"
                     android:padding="3dp"
                     android:text="@string/sampleStatus"
-                    android:fontFamily="@font/roboto_condensed"
                     android:textColor="@color/red" />
             </TableRow>
 
@@ -263,8 +262,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="@string/information"
             android:fontFamily="@font/roboto_condensed"
+            android:text="@string/information"
             app:layout_constraintBottom_toTopOf="@+id/tableLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -277,10 +276,10 @@
         android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_header_menu"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_header_menu">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -296,10 +295,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:fontFamily="@font/roboto_condensed"
                 android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_condensed"
                 android:text="@string/made_and_gifted_by"
-                android:textColor="@color/nordone"/>
+                android:textColor="@color/nordone" />
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -322,7 +321,6 @@
         </LinearLayout>
 
     </com.google.android.material.navigation.NavigationView>
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
