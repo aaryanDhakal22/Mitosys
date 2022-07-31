@@ -1,7 +1,12 @@
 package com.prashannar.mitosys
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Gravity
@@ -9,13 +14,21 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_home_screen.*
+import okhttp3.internal.notify
 import retrofit2.HttpException
 import java.io.IOException
 
 class HomeScreen : AppCompatActivity() {
+
+    //notification
+    val Channel_ID = "channelID"
+    val Channel_Name = "channelName"
+    val notification_ID = 0
 
     companion object {
         const val github = "https://github.com/PrashannaR"
@@ -64,7 +77,38 @@ class HomeScreen : AppCompatActivity() {
         }
         getUserData()
 
+        //notification
+        createNotificationChannel()
 
+        val notification = NotificationCompat.Builder(this, Channel_ID)
+            .setContentTitle("Test title")
+            .setContentText("Test Text")
+            .setSmallIcon(R.drawable.icon)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .build()
+
+        val notificationManager = NotificationManagerCompat.from(this)
+
+        notificationManager.notify(notification_ID, notification)
+
+
+    }
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                Channel_ID, Channel_Name,
+                NotificationManager.IMPORTANCE_DEFAULT
+            ).apply {
+                lightColor = Color.BLUE
+                enableLights(true)
+            }
+            val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            manager.createNotificationChannel(channel)
+
+
+
+        }
     }
 
     private fun getUserData() {
