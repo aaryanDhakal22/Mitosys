@@ -4,6 +4,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
@@ -19,11 +20,12 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_home_screen.*
-import okhttp3.internal.notify
 import retrofit2.HttpException
 import java.io.IOException
 
+
 class HomeScreen : AppCompatActivity() {
+    var sharedPreferences: SharedPreferences? = null
 
     //notification
     val Channel_ID = "channelID"
@@ -56,7 +58,9 @@ class HomeScreen : AppCompatActivity() {
                 }
 
                 R.id.item2 -> {
-
+                    val editor = sharedPreferences!!.edit()
+                    editor.putInt("key", 0)
+                    editor.apply()
                     progressBar.isVisible = true
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
