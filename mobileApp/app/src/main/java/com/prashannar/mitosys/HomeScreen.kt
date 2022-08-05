@@ -17,6 +17,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
+import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_home_screen.*
@@ -54,9 +55,9 @@ class HomeScreen : AppCompatActivity() {
                 R.id.item1 -> {
                     val intent = Intent(this, PaymentDetails::class.java)
                     startActivity(intent)
-                    drawerLayout.closeDrawer(Gravity.LEFT)
+                    drawerLayout.closeDrawer(GravityCompat.START)
                 }
-
+                //TODO(fix sign out)
                 R.id.item2 -> {
                     val editor = sharedPreferences!!.edit()
                     editor.putInt("key", 0)

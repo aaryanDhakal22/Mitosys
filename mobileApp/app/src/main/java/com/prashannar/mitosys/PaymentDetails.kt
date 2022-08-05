@@ -19,6 +19,9 @@ import java.io.IOException
 import java.io.OutputStream
 
 class PaymentDetails : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_details)
@@ -34,6 +37,7 @@ class PaymentDetails : AppCompatActivity() {
 
         getUserData()
 
+
         saveBtn.setOnClickListener {
             val bitmap: Bitmap = Screenshot.takeScreenShotOfRoot(ssIV)
             ssIV.setImageBitmap(bitmap)
@@ -41,6 +45,7 @@ class PaymentDetails : AppCompatActivity() {
                 ssIV.isVisible = false
             }, 5000)
             saveToGallery(this, bitmap, "Mitosys")
+            saveBtn.isEnabled = false
         }
     }
 
