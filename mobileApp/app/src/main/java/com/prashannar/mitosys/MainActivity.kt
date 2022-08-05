@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         //hide action bar
         supportActionBar?.hide()
         sharedpreferences = getSharedPreferences("autoLogin", Context.MODE_PRIVATE)
-        var j = sharedpreferences?.getInt("key", 0)
+        val j = sharedpreferences?.getInt("key", 0)
 
         if (j != null) {
             if(j > 0){

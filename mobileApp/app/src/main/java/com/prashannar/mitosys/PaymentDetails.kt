@@ -2,7 +2,6 @@ package com.prashannar.mitosys
 
 import android.content.ContentValues
 import android.content.Context
-import android.content.Intent
 import android.graphics.Bitmap
 import android.os.*
 import android.provider.MediaStore
@@ -19,24 +18,14 @@ import java.io.IOException
 import java.io.OutputStream
 
 class PaymentDetails : AppCompatActivity() {
-
-
-
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_details)
 
         supportActionBar?.hide()
 
-
-        backIV.setOnClickListener {
-            val intent = Intent(this, HomeScreen::class.java)
-            startActivity(intent)
-            finish()
-        }
-
         getUserData()
-
 
         saveBtn.setOnClickListener {
             val bitmap: Bitmap = Screenshot.takeScreenShotOfRoot(ssIV)
@@ -49,7 +38,7 @@ class PaymentDetails : AppCompatActivity() {
         }
     }
 
-    fun saveToGallery(context: Context, bitmap: Bitmap, albumName: String) {
+    private fun saveToGallery(context: Context, bitmap: Bitmap, albumName: String) {
         val filename = "${System.currentTimeMillis()}.png"
         val write: (OutputStream) -> Boolean = {
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, it)

@@ -26,12 +26,12 @@ import java.io.IOException
 
 
 class HomeScreen : AppCompatActivity() {
-    var sharedPreferences: SharedPreferences? = null
+    private var sharedPreferences: SharedPreferences? = null
 
     //notification
-    val Channel_ID = "channelID"
-    val Channel_Name = "channelName"
-    val notification_ID = 0
+    private val channelID = "channelID"
+    private val channelName = "channelName"
+    private val notificationID = 0
 
     companion object {
         const val github = "https://github.com/PrashannaR"
@@ -85,7 +85,7 @@ class HomeScreen : AppCompatActivity() {
         //notification
         createNotificationChannel()
 
-        val notification = NotificationCompat.Builder(this, Channel_ID)
+        val notification = NotificationCompat.Builder(this, channelID)
             .setContentTitle("Test title")
             .setContentText("Test Text")
             .setSmallIcon(R.drawable.icon)
@@ -94,7 +94,7 @@ class HomeScreen : AppCompatActivity() {
 
         val notificationManager = NotificationManagerCompat.from(this)
 
-        notificationManager.notify(notification_ID, notification)
+        notificationManager.notify(notificationID, notification)
 
 
     }
@@ -102,7 +102,7 @@ class HomeScreen : AppCompatActivity() {
     private fun createNotificationChannel() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
-                Channel_ID, Channel_Name,
+                channelID, channelName,
                 NotificationManager.IMPORTANCE_DEFAULT
             ).apply {
                 lightColor = Color.BLUE
@@ -152,8 +152,8 @@ class HomeScreen : AppCompatActivity() {
 
     //prevents closing of app when slide menu is open
     override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-            drawerLayout.closeDrawer(Gravity.LEFT)
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
         }
