@@ -7,6 +7,7 @@ import android.os.*
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
@@ -18,7 +19,7 @@ import java.io.IOException
 import java.io.OutputStream
 
 class PaymentDetails : AppCompatActivity() {
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_details)
@@ -35,7 +36,17 @@ class PaymentDetails : AppCompatActivity() {
             }, 5000)
             saveToGallery(this, bitmap, "Mitosys")
             saveBtn.isEnabled = false
+            alertUser()
         }
+    }
+
+    private fun alertUser() {
+        AlertDialog.Builder(this)
+            .setTitle("Details Saved")
+            .setMessage("Your details has been saved successfully to the gallery")
+            .setIcon(R.drawable.icon)
+            .setPositiveButton("Okay"){_,_ ->}
+            .show()
     }
 
     private fun saveToGallery(context: Context, bitmap: Bitmap, albumName: String) {
