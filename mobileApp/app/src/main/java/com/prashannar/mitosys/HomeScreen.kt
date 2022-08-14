@@ -10,7 +10,6 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.Gravity
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -20,12 +19,15 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.GravityCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import com.prashannar.mitosys.api.Instance
 import kotlinx.android.synthetic.main.activity_home_screen.*
 import retrofit2.HttpException
 import java.io.IOException
 
 
 class HomeScreen : AppCompatActivity() {
+    private var feeStatus: String? = null
+
     private var sharedPreferences: SharedPreferences? = null
 
     //notification
@@ -82,21 +84,8 @@ class HomeScreen : AppCompatActivity() {
         }
         getUserData()
 
-        //notification
-        createNotificationChannel()
-
-        val notification = NotificationCompat.Builder(this, channelID)
-            .setContentTitle("Test title")
-            .setContentText("Test Text")
-            .setSmallIcon(R.drawable.icon)
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
-            .build()
-
-        val notificationManager = NotificationManagerCompat.from(this)
-
-        notificationManager.notify(notificationID, notification)
-
-
+        getPaymentStatus()
+        
     }
 
     private fun createNotificationChannel() {
@@ -112,8 +101,58 @@ class HomeScreen : AppCompatActivity() {
             manager.createNotificationChannel(channel)
 
 
+        }
+    }
+
+    private fun getPaymentStatus() {
+        lifecycleScope.launchWhenCreated {
+
+
+            val response = try {
+                Instance.api.getFeeStatus("2d68c1ed7caa45")
+
+            } catch (e: IOException) {
+                Log.e("Retrofit", "No Internet Connection")
+
+                return@launchWhenCreated
+            } catch (e: HttpException) {
+                Log.e("Retrofit", "Unexpected response")
+
+                return@launchWhenCreated
+            }
+
+            //on success
+            if (response.isSuccessful && response.body() != null) {
+                val details = response.body()
+                feeStatus = details?.status.toString()
+
+                if (feeStatus == "paid") {
+                    notifyFees()
+                }
+
+
+                Log.d("this", feeStatus.toString())
+            } else {
+                Log.d("error", response.code().toString())
+            }
+            progressBar.isVisible = false
 
         }
+    }
+
+    private fun notifyFees() {
+        createNotificationChannel()
+
+        val notification = NotificationCompat.Builder(this, channelID)
+            .setContentTitle("Fees Paid Successfully")
+            .setContentText("Thank You For Paying")
+            .setSmallIcon(R.drawable.icon)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+            .build()
+
+        val notificationManager = NotificationManagerCompat.from(this)
+
+        notificationManager.notify(notificationID, notification)
     }
 
     private fun getUserData() {

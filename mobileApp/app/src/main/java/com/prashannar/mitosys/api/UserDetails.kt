@@ -1,4 +1,4 @@
-package com.prashannar.mitosys
+package com.prashannar.mitosys.api
 
 data class UserDetails(
     val address: String,

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
+import com.prashannar.mitosys.api.Instance
 import kotlinx.android.synthetic.main.activity_payment_details.*
 import retrofit2.HttpException
 import java.io.File
@@ -27,6 +28,9 @@ class PaymentDetails : AppCompatActivity() {
         supportActionBar?.hide()
 
         getUserData()
+
+        //get the fees details of the student
+        //https://anmolsec.com/api/fee/status/2d68c1ed7caa45
 
         saveBtn.setOnClickListener {
             val bitmap: Bitmap = Screenshot.takeScreenShotOfRoot(ssIV)

@@ -1,4 +1,4 @@
-package com.prashannar.mitosys
+package com.prashannar.mitosys.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
