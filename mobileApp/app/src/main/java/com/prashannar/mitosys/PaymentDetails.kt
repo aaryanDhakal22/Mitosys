@@ -21,6 +21,8 @@ import java.io.OutputStream
 
 class PaymentDetails : AppCompatActivity() {
 
+    private lateinit var userID: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_payment_details)
@@ -29,8 +31,9 @@ class PaymentDetails : AppCompatActivity() {
 
         getUserData()
 
-        //get the fees details of the student
-        //https://anmolsec.com/api/fee/status/2d68c1ed7caa45
+        userID = intent.getStringExtra("userId").toString()
+
+
 
         saveBtn.setOnClickListener {
             val bitmap: Bitmap = Screenshot.takeScreenShotOfRoot(ssIV)
@@ -107,7 +110,7 @@ class PaymentDetails : AppCompatActivity() {
             progressBarDetails.isVisible = true
 
             val response = try {
-                Instance.api.getUser("2d68c1ed7caa45")
+                Instance.api.getUser(userID)
 
             } catch (e: IOException) {
                 Log.e("Retrofit", "No Internet Connection")

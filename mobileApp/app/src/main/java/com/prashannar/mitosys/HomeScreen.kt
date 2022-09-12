@@ -39,6 +39,10 @@ class HomeScreen : AppCompatActivity() {
         const val github = "https://github.com/PrashannaR"
     }
 
+    private lateinit var userID: String
+
+
+
     private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,10 +56,13 @@ class HomeScreen : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        userID = intent.getStringExtra("userId").toString()
+
         navView.setNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.item1 -> {
                     val intent = Intent(this, PaymentDetails::class.java)
+                    intent.putExtra("userId", userID)
                     startActivity(intent)
                     drawerLayout.closeDrawer(GravityCompat.START)
                 }
@@ -85,7 +92,7 @@ class HomeScreen : AppCompatActivity() {
         getUserData()
 
         getPaymentStatus()
-        
+
     }
 
     private fun createNotificationChannel() {
@@ -109,7 +116,7 @@ class HomeScreen : AppCompatActivity() {
 
 
             val response = try {
-                Instance.api.getFeeStatus("2d68c1ed7caa45")
+                Instance.api.getFeeStatus(userID)
 
             } catch (e: IOException) {
                 Log.e("Retrofit", "No Internet Connection")
@@ -160,7 +167,7 @@ class HomeScreen : AppCompatActivity() {
             progressBar.isVisible = true
 
             val response = try {
-                Instance.api.getUser("2d68c1ed7caa45")
+                Instance.api.getUser(userID)
 
             } catch (e: IOException) {
                 Log.e("Retrofit", "No Internet Connection")
@@ -174,7 +181,6 @@ class HomeScreen : AppCompatActivity() {
 
             //on success
             if (response.isSuccessful && response.body() != null) {
-                //nameTV.text = "Name: ${response.body()!!.name}"
                 Log.d("retro", response.body().toString())
                 val details = response.body()
                 nameTV.text = "Name: ${details!!.name}"

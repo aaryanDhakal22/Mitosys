@@ -4,13 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    var sharedpreferences: SharedPreferences? = null
+    private var sharedpreferences: SharedPreferences? = null
     private var autoSave = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val j = sharedpreferences?.getInt("key", 0)
 
         if (j != null) {
-            if(j > 0){
+            if (j > 0) {
                 val intent = Intent(this, HomeScreen::class.java)
                 startActivity(intent)
                 finish()
@@ -44,12 +45,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun checkInput() {
-        if (unameET.editText?.text?.trim().toString() != "userOne") {
-            unameET.error = "Invalid Username"
-        } else if (passET.editText?.text?.trim().toString() != "Nepal123") {
+        if (passET.editText?.text?.trim().toString() != "Nepal123") {
             passET.error = "Invalid Password"
         } else {
+            val userID = unameET.editText?.text?.trim().toString()
             val intent = Intent(this, HomeScreen::class.java)
+            intent.putExtra("userId", userID)
             startActivity(intent)
             finish()
         }
