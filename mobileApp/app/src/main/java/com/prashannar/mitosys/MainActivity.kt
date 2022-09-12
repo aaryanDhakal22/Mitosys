@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import kotlinx.android.synthetic.main.activity_main.*
@@ -24,6 +23,8 @@ class MainActivity : AppCompatActivity() {
 
         //hide action bar
         supportActionBar?.hide()
+
+        //keep the user logged in
         sharedpreferences = getSharedPreferences("autoLogin", Context.MODE_PRIVATE)
         val j = sharedpreferences?.getInt("key", 0)
 

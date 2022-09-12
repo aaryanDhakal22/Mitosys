@@ -15,8 +15,7 @@
         android:background="@color/nordone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-         />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
@@ -53,22 +52,22 @@
                 android:layout_marginTop="52dp"
                 android:textAlignment="center"
                 app:boxBackgroundColor="@color/white"
+                app:endIconMode="clear_text"
                 app:hintTextColor="@color/nordone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
-                app:endIconMode="clear_text"
                 app:layout_constraintTop_toBottomOf="@+id/imageView">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/unameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/username"
                     android:fontFamily="@font/roboto_condensed"
-                    android:nextFocusForward="@id/passEditText"
+                    android:hint="@string/username"
                     android:inputType="textPersonName"
                     android:minHeight="48dp"
+                    android:nextFocusForward="@id/passEditText"
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -80,8 +79,8 @@
                 android:layout_marginTop="20dp"
                 android:textAlignment="center"
                 app:boxBackgroundColor="@color/white"
-                app:hintTextColor="@color/nordone"
                 app:endIconMode="password_toggle"
+                app:hintTextColor="@color/nordone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
                 app:layout_constraintStart_toStartOf="parent"
@@ -91,8 +90,8 @@
                     android:id="@+id/passEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password"
                     android:fontFamily="@font/roboto_condensed"
+                    android:hint="@string/password"
                     android:imeOptions="actionDone"
                     android:inputType="textPassword"
                     android:minHeight="48dp"
@@ -105,8 +104,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:backgroundTint="@color/nordtwo"
-                android:text="@string/login"
                 android:fontFamily="@font/roboto_condensed"
+                android:text="@string/login"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -119,9 +118,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

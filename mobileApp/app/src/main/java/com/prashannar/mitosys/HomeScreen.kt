@@ -42,7 +42,6 @@ class HomeScreen : AppCompatActivity() {
     private lateinit var userID: String
 
 
-
     private lateinit var toggle: ActionBarDrawerToggle
 
     override fun onCreate(savedInstanceState: Bundle?) {
